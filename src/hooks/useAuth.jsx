@@ -15,21 +15,17 @@ const register = async ({ username, name, password }) => {
     return res.data;
 };
 
-// Foydalanuvchini olish
 export const getUser = () => {
     const user = localStorage.getItem("user");
     return user ? JSON.parse(user) : null;
 };
 
-// Tokenni saqlash
 export const setToken = (token) => {
     localStorage.setItem("token", token);
 };
 
-// Tokenni olish
 export const getToken = () => localStorage.getItem("token");
 
-// Token va userni o‘chirish (logout qilish)
 export const removeToken = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -38,12 +34,11 @@ export const removeToken = () => {
 const useAuth = () => {
     const navigate = useNavigate();
 
-    // Login
     const loginMutation = useMutation({
         mutationFn: login,
         onSuccess: (data) => {
             setToken(data.token);
-            localStorage.setItem("user", JSON.stringify(data.user)); // Foydalanuvchini saqlash
+            localStorage.setItem("user", JSON.stringify(data.user));
             toast.success("Login successful");
 
             setTimeout(() => {
@@ -56,12 +51,11 @@ const useAuth = () => {
         }
     });
 
-    // Register
     const registerMutation = useMutation({
         mutationFn: register,
         onSuccess: (data) => {
             setToken(data.token);
-            localStorage.setItem("user", JSON.stringify(data.user)); // Foydalanuvchini saqlash
+            localStorage.setItem("user", JSON.stringify(data.user));
             toast.success("Registration successful");
 
             setTimeout(() => {

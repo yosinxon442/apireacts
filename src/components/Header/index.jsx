@@ -1,24 +1,21 @@
 import React, { useState } from "react";
 import { FaRedo, FaBell, FaCog, FaAngleDown } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
-const Header = ({ setIsAuthenticated }) => {
+const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const navigate = useNavigate();
 
-  // Logout funksiyasi
-const handleLogout = () => {
-  localStorage.removeItem("token"); // Faqat tokenni o‘chiramiz, akkaunt ma’lumotlari qoladi
-  window.location.reload(); // Sahifani qayta yuklaymiz
-};
-
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
 
   return (
     <header className="header">
       <div className="left-section">
         <Link to="/" className="logo">
-          <i className="fa-solid fa-blog"></i>
+          <i className="fa-solid fa-blog lahinss"></i>
         </Link>
         <button className="new-btn">+ New</button>
       </div>
@@ -28,14 +25,12 @@ const handleLogout = () => {
       </div>
 
       <div className="right-section">
-        <FaRedo className="icon" />
+        <FaRedo onClick={() => window.location.reload()} className="icon" />
 
-        {/* Bildirishnoma (Notification) tugmasi */}
         <div className="notification">
           <FaBell className="icon" />
         </div>
 
-        {/* Nastroyka tugmasi */}
         <div className="settings">
           <FaCog className="icon" onClick={() => setDropdownOpen(!dropdownOpen)} />
           {dropdownOpen && (

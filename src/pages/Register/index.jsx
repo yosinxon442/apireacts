@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { BiWifi } from "react-icons/bi"; // React Icons dan simvol
+import { BiWifi } from "react-icons/bi";
 import useAuth, { getToken } from "../../hooks/useAuth";
 import "./Register.css";
 

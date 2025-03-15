@@ -5,9 +5,9 @@ import Header from "../components/Header";
 const AppLayout = () => {
   return (
     <div>
-      <Header />  {/* Header har doim ekranda turadi */}
+      <Header />
       <main>
-        <Outlet /> {/* Ichki sahifalar shu joyda ko‘rinadi */}
+        <Outlet />
       </main>
     </div>
   );

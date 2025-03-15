@@ -6,7 +6,6 @@
   justify-content: center;
 }
 
-/* **Chap tomondagi brend qismi** */
 .login-left {
   width: 35%;
   background: #1e1e2f;
@@ -113,6 +112,11 @@ button:hover {
   color: #007bff;
   text-decoration: none;
   font-weight: bold;
+}
+
+.igess{
+  font-size: 50px;
+  margin-bottom: 15px;
 }
 
 .login-right a:hover {

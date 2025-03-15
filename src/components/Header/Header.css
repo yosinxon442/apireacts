@@ -1,4 +1,3 @@
-/* Header container */
 .header {
   display: flex;
   justify-content: space-between;
@@ -9,14 +8,12 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Left section */
 .left-section {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Logo */
 .logo img {
   height: 40px;
   cursor: pointer;
@@ -27,7 +24,6 @@
   transform: scale(1.1);
 }
 
-/* New button */
 .new-btn {
   background: #007bff;
   color: white;
@@ -48,7 +44,6 @@
   transform: scale(0.95);
 }
 
-/* Search section */
 .search-section {
   flex-grow: 1;
   display: flex;
@@ -69,14 +64,12 @@
   box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
 }
 
-/* Right section */
 .right-section {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Icons */
 .icon {
   font-size: 22px;
   cursor: pointer;
@@ -88,7 +81,6 @@
   transform: scale(1.2);
 }
 
-/* Notification badge */
 .notification {
   position: relative;
 }
@@ -110,12 +102,10 @@
   background: darkred;
 }
 
-/* Settings dropdown */
 .settings {
   position: relative;
 }
 
-/* Dropdown menyu */
 .dropdown-menu {
   position: absolute;
   right: 0;
@@ -126,6 +116,10 @@
   width: 120px;
   display: flex;
   flex-direction: column;
+}
+
+.lahinss {
+  font-size: 30px;
 }
 
 .dropdown-menu button {
@@ -143,7 +137,6 @@
   background: #f1f1f1;
 }
 
-/* Primary button */
 .button.primary {
   background: #007bff;
   color: white;
@@ -154,7 +147,6 @@
   box-shadow: 0 4px 10px rgba(0, 91, 187, 0.4);
 }
 
-/* Danger button */
 .button.danger {
   background: red;
   color: white;

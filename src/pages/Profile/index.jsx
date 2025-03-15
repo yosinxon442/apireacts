@@ -8,7 +8,7 @@ import "./Profile.css";
 
 const Profile = () => {
   const navigate = useNavigate();
-  const user = getUser(); // Foydalanuvchini olish
+  const user = getUser();
 
   if (!getToken()) {
     return <Navigate to="/login" />;

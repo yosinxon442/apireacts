@@ -20,14 +20,12 @@ const Login = () => {
 
   return (
     <div className="login-wrapper">
-      {/* Chap tomondagi brend qismi */}
       <div className="login-left">
-        <img src="/logo.png" alt="Logo" className="logo" />
+        <i className="fa-solid fa-blog igess"></i>
         <p>Welcome back to</p>
         <h1>Shopping List</h1>
       </div>
 
-      {/* O'ng tomondagi login formasi */}
       <div className="login-right">
         <h2>Sign In</h2>
         <form onSubmit={handleLogin}>
