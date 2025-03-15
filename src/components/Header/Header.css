@@ -1,0 +1,166 @@
+/* Header container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Left section */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* New button */
+.new-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.new-btn:hover {
+  background: #0056b3;
+  box-shadow: 0 4px 10px rgba(0, 91, 187, 0.4);
+}
+
+.new-btn:active {
+  transform: scale(0.95);
+}
+
+/* Search section */
+.search-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-section input {
+  width: 60%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.search-section input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
+}
+
+/* Right section */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Icons */
+.icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.icon:hover {
+  color: #007bff;
+  transform: scale(1.2);
+}
+
+/* Notification badge */
+.notification {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 4px 7px;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.notification:hover .badge {
+  background: darkred;
+}
+
+/* Settings dropdown */
+.settings {
+  position: relative;
+}
+
+/* Dropdown menyu */
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  color: rgba(61, 57, 57, 0.647);
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.dropdown-menu button:hover {
+  background: #f1f1f1;
+}
+
+/* Primary button */
+.button.primary {
+  background: #007bff;
+  color: white;
+}
+
+.button.primary:hover {
+  background: #0056b3;
+  box-shadow: 0 4px 10px rgba(0, 91, 187, 0.4);
+}
+
+/* Danger button */
+.button.danger {
+  background: red;
+  color: white;
+}
+
+.button.danger:hover {
+  background: darkred;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+}
