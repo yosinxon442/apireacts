@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Sidebar.css";
 import { FaUser, FaComments } from "react-icons/fa";
+import AddGroupModal from "./AddGroupModal";
+import "./Sidebar.css";
 
 const Sidebar = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="sidebar">
       <Link to="/profile" className="sidebar-item">
         <FaUser className="icon" />
         Profile
       </Link>
-      <Link to="/groups" className="sidebar-item">
+      <button className="sidebar-item" onClick={() => setIsModalOpen(true)}>
         <FaComments className="icon" />
-        Groups
-      </Link>
+        Add Group
+      </button>
+      {isModalOpen && <AddGroupModal onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 };
