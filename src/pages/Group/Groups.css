@@ -1,27 +1,44 @@
 .groups-container {
-    margin-left: 250px;
-    padding: 20px;
-  }
-  
-  .groups-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .group-card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .group-card h3 {
-    margin-bottom: 5px;
-  }
-  
-  .members {
-    font-size: 14px;
-    color: gray;
-  }
-  
+  padding: 20px;
+}
+
+.groups-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.group-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.group-card h3 {
+  margin: 0;
+}
+
+.group-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.join-btn, .view-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.join-btn {
+  background-color: #28a745;
+  color: white;
+}

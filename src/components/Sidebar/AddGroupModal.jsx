@@ -15,22 +15,30 @@ const AddGroupModal = ({ onClose }) => {
 
     const token = localStorage.getItem("token");
 
+    if (!token) {
+      alert("Authorization error: Please log in again.");
+      setLoading(false);
+      return;
+    }
+
     try {
-      await axios.post(
+      const response = await axios.post(
         API_URL,
         { name: name.trim(), password: password.trim() },
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            "x-auth-token": token,
           },
         }
       );
-      alert("Group added successfully!");
+
+      console.log("API Response:", response.data);
+      alert(response.data.message || "Group added successfully!");
+      
       setName("");
       setPassword("");
       onClose();
-      window.location.reload(); // Guruhlar sahifasini yangilash
     } catch (error) {
       console.error("Error adding group:", error.response?.data || error.message);
       alert(`Error: ${error.response?.data?.message || "Failed to add group"}`);
