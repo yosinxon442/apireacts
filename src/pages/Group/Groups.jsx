@@ -42,7 +42,7 @@ const Groups = ({ searchTerm }) => {
 
   return (
     <div className="groups-container">
-      <h2>Groups</h2>
+      
       <div className="groups-list">
         {filteredGroups.length > 0 ? (
           filteredGroups.map((group) => (
