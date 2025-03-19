@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaUser, FaComments, FaUsers, FaInfoCircle } from "react-icons/fa"; // 🔥 FaInfoCircle qo'shildi
+import { FaUser, FaComments, FaUsers, FaInfoCircle } from "react-icons/fa";
 import AddGroupModal from "./AddGroupModal";
 import "./Sidebar.css";
 
 const Sidebar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentGroupId, setCurrentGroupId] = useState(null); // 🔥 Yangi yaratilgan guruh ID sini saqlash uchun
+  const [currentGroupId, setCurrentGroupId] = useState(null);
 
   return (
     <div className="sidebar">
@@ -25,7 +25,6 @@ const Sidebar = () => {
         Add Group
       </button>
 
-      {/* 🔥 Agar guruh yaratilgan bo‘lsa, GroupDetail sahifasiga yo‘naltiruvchi tugma */}
       {currentGroupId && (
         <Link to={`/groups/${currentGroupId}`} className="sidebar-item">
           <FaInfoCircle className="icon" />
@@ -36,7 +35,7 @@ const Sidebar = () => {
       {isModalOpen && (
         <AddGroupModal 
           onClose={() => setIsModalOpen(false)} 
-          setCurrentGroupId={setCurrentGroupId} // 🔥 Modal orqali yangi yaratilgan guruh ID sini olish
+          setCurrentGroupId={setCurrentGroupId}
         />
       )}
     </div>

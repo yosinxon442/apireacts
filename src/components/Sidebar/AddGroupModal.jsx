@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // 🔥 Navigate uchun
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AddGroupModal.css";
 
@@ -9,7 +9,7 @@ const AddGroupModal = ({ onClose, setCurrentGroupId }) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // 🔥 Sahifani yo‘naltirish uchun
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,18 +35,10 @@ const AddGroupModal = ({ onClose, setCurrentGroupId }) => {
         }
       );
 
-      console.log("API Response:", response.data);
       alert(response.data.message || "Group added successfully!");
-
-      // 🔥 Yangi yaratilgan guruhni ochish uchun ID olish
-      const newGroupId = response.data._id; 
-
-      // 🔥 Sidebar ga yangi guruh ID ni berish
+      const newGroupId = response.data._id;
       setCurrentGroupId(newGroupId);
-
-      // 🔥 GroupDetail sahifasiga yo‘naltirish
       navigate(`/groups/${newGroupId}`);
-
       setName("");
       setPassword("");
       onClose();

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // 🔥 Link qo‘shildi
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Groups.css";
 
@@ -42,17 +42,16 @@ const Groups = ({ searchTerm }) => {
 
   return (
     <div className="groups-container">
-      
       <div className="groups-list">
         {filteredGroups.length > 0 ? (
           filteredGroups.map((group) => (
-            <div key={group.id} className="group-card">
+            <div key={group.id} className="group-card"> {/* 🔥 key propini qo'shish */}
               <h3>{group.name}</h3>
               <span className="group-date">{group.date}</span>
               <p>Created By {group.creator}</p>
               <div className="group-actions">
                 <button className="join-btn">Join</button>
-                <Link to={`/groups/${group.id}`} className="view-btn">View</Link> {/* 🔥 "View" tugmasi qo‘shildi */}
+                <Link to={`/groups/${group.id}`} className="view-btn">View</Link>
               </div>
             </div>
           ))
