@@ -1,76 +1,120 @@
 .group-detail {
-  max-width: 900px;
-  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  margin-left: 290px;
+  margin-top: 30px;
+  height: auto;
   padding: 20px;
+  
+}
+
+.items-container {
+  width: 55%;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-  color: #333;
-  text-align: center;
-}
-
-p {
-  color: #555;
-}
-
-.members {
-  margin-top: 20px;
+.members-container {
+  width: 40%;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .member-card {
   display: flex;
   align-items: center;
-  background: #f8f8f8;
+  background: #f8f9fa;
   padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  transition: 0.3s ease;
-}
-
-.member-card:hover {
-  background: #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .member-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  object-fit: cover;
   margin-right: 10px;
 }
 
-.button-group {
-  margin-top: 20px;
+.member-info {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+.member-info strong {
+  font-size: 16px;
+  color: #333;
+}
+
+.members{
+  width: 45%;
+  padding: 30px;
+  background-color: #f8f9fa;
+}
+
+.member-info p {
+  font-size: 14px;
+  color: #777;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn{
+  margin: 0;
+}
+
+.remove-btn:hover {
+  color: darkred;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .back-btn, .delete-btn {
-  padding: 10px 15px;
+  padding:15px;
   border: none;
-  border-radius: 5px;
+  width: 200px;
+  border-radius: 8px;
+  font-size: 14px;
   cursor: pointer;
+  transition: 0.3s;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s ease;
+  text-align: center;
 }
 
 .back-btn {
-  background: #007bff;
+  background-color: #007bff;
   color: white;
 }
 
 .back-btn:hover {
-  background: #0056b3;
+  background-color: #0056b3;
 }
 
 .delete-btn {
-  background: #dc3545;
+  background-color: #dc3545;
   color: white;
 }
 
 .delete-btn:hover {
-  background: #c82333;
+  background-color: #b02a37;
 }

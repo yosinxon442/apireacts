@@ -45,7 +45,7 @@ const Groups = ({ searchTerm }) => {
       <div className="groups-list">
         {filteredGroups.length > 0 ? (
           filteredGroups.map((group) => (
-            <div key={group.id} className="group-card"> {/* 🔥 key propini qo'shish */}
+            <div key={group.id} className="group-card"> 
               <h3>{group.name}</h3>
               <span className="group-date">{group.date}</span>
               <p>Created By {group.creator}</p>

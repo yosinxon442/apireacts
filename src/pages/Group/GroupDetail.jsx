@@ -42,7 +42,9 @@ const GroupDetail = ({ setCurrentGroupId }) => {
   }, [id]);
 
   const handleRemoveMember = async (memberId) => {
-    const confirmRemove = window.confirm("Are you sure you want to remove this member?");
+    const confirmRemove = window.confirm(
+      "Are you sure you want to remove this member?"
+    );
     if (!confirmRemove) return;
 
     try {
@@ -58,7 +60,7 @@ const GroupDetail = ({ setCurrentGroupId }) => {
       });
 
       alert("Member successfully removed!");
-      setMembers(members.filter(member => member.id !== memberId));
+      setMembers(members.filter((member) => member.id !== memberId));
     } catch (error) {
       console.error("Error removing member:", error);
       alert("Failed to remove member.");
@@ -66,7 +68,9 @@ const GroupDetail = ({ setCurrentGroupId }) => {
   };
 
   const handleDeleteGroup = async () => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this group?");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this group?"
+    );
     if (!confirmDelete) return;
 
     try {
@@ -99,31 +103,54 @@ const GroupDetail = ({ setCurrentGroupId }) => {
 
   return (
     <div className="group-detail">
-      <h2>{group.name}</h2>
-      <p><strong>Created By:</strong> {group.creator}</p>
-      <p><strong>Date:</strong> {group.date}</p>
-      <p><strong>Description:</strong> {group.description || "No description available"}</p>
+      <div id="itbaliq">
+        <h2>{group.name}</h2>
+        <p>
+          <strong>Created By:</strong> {group.creator}
+        </p>
+        <p>
+          <strong>Date:</strong> {group.date}
+        </p>
+        <p>
+          <strong>Description:</strong>{" "}
+          {group.description || "No description available"}
+        </p>
+      </div>
 
-      {/* 🔥 Members bo‘limi */}
       <div className="members">
         <h3>Members ({members.length})</h3>
         {members.length > 0 ? (
           members.map((member, index) => (
-            <div key={member.id || member.email || index} className="member-card">
-              <img src={member.profileImage || "/default-avatar.png"} alt={member.username} className="member-avatar" />
-              <p><strong>{member.username}</strong></p>
+            <div
+              key={member.id || member.email || index}
+              className="member-card"
+            >
+              <img
+                src={member.profileImage || "/default-avatar.png"}
+                alt={member.username}
+                className="member-avatar"
+              />
+              <p>
+                <strong>{member.username}</strong>
+              </p>
               <p>{member.email}</p>
-              <button onClick={() => handleRemoveMember(member.id)}>Remove</button>
+              <button onClick={() => handleRemoveMember(member.id)}>
+                Remove
+              </button>
             </div>
           ))
         ) : (
           <p>No members found.</p>
         )}
-      </div>
 
-      <div className="button-group">
-        <Link to="/groups" className="back-btn">Back to Groups</Link>
-        <button className="delete-btn" onClick={handleDeleteGroup}>Delete Group</button>
+        <div className="button-group">
+          <Link to="/groups" className="back-btn">
+            Back to Groups
+          </Link>
+          <button className="delete-btn" onClick={handleDeleteGroup}>
+            Delete Group
+          </button>
+        </div>
       </div>
     </div>
   );
