@@ -16,7 +16,6 @@ const AddGroupModal = ({ onClose, setCurrentGroupId }) => {
     setLoading(true);
 
     const token = localStorage.getItem("token");
-
     if (!token) {
       alert("Authorization error: Please log in again.");
       setLoading(false);
@@ -28,10 +27,7 @@ const AddGroupModal = ({ onClose, setCurrentGroupId }) => {
         API_URL,
         { name: name.trim(), password: password.trim() },
         {
-          headers: {
-            "Content-Type": "application/json",
-            "x-auth-token": token,
-          },
+          headers: { "Content-Type": "application/json", "x-auth-token": token },
         }
       );
 
